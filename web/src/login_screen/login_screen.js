@@ -33,7 +33,7 @@ function login_screen() {
         <div class="row border rounded-1 p-3 bg-light shadow box-area">
           <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
             <div class="featured-image mb-3">
-              <img src="youtube.png" class="img-fluid p-5" alt="Responsive image"></img>
+              <img src="youtube.png" class="img-fluid p-3" alt="Responsive image"></img>
             </div>
           </div>
           <div class="col-md-6 right-box">
@@ -55,7 +55,7 @@ function login_screen() {
                 </div>
               </div>
               <div class="input-group mb-3 pt-5">
-                <button class="btn btn-lg btn-primary w-100 fs-6" onClick={Verify_user} type='submit'>Login</button>
+                <button class="btn btn-lg btn-primary w-100" onClick={Verify_user} type='submit'>Login</button>
               </div>
               <div class="row">
                 <div class="col">

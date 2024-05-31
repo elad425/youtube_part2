@@ -30,7 +30,7 @@ function login_screen() {
   return (
     <body>
       <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="row border rounded-1 p-3 bg-white shadow box-area">
+        <div class="row border rounded-1 p-3 bg-light shadow box-area">
           <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
             <div class="featured-image mb-3">
               <img src="youtube.png" class="img-fluid p-5" alt="Responsive image"></img>

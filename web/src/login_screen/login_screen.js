@@ -1,5 +1,21 @@
 
 import './login_screen.css';
+import user_data from '../user_info.json';
+
+const Verify_user = () => {
+  
+  var email=document.getElementById("email").value;
+  var password=document.getElementById("password").value;
+  var i = 0
+  while (i < user_data.length){
+    if (user_data[i].email === email){
+      if (user_data[i].password === password){
+        console.log('match')
+      }
+    }
+    i+=1;
+  }
+}
 
 function login_screen() {
   return (
@@ -19,19 +35,19 @@ function login_screen() {
                 <t>please varify yourself</t>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address"></input>
+                <input type="text" class="form-control form-control-lg bg-light fs-6" id="email" placeholder="Email address"></input>
                 <div class="invalid-feedback">
                   missing username.
                 </div>
               </div>
               <div class="input-group mb-1">
-                <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password"></input>
+                <input type="password" class="form-control form-control-lg bg-light fs-6" id="password" placeholder="Password"></input>
                 <div class="invalid-feedback">
                   missing password.
                 </div>
               </div>
               <div class="input-group mb-3 pt-5">
-                <button class="btn btn-lg btn-primary w-100 fs-6" type="submit">Login</button>
+                <button class="btn btn-lg btn-primary w-100 fs-6" onClick={Verify_user} type="submit">Login</button>
               </div>
               <div class="row">
                 <div class="col">

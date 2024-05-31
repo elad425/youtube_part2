@@ -1,9 +1,9 @@
 import './App.css';
-import Login_screen from './login_screen/login_screen';
+import Login_screen_dark from './login_screen/login_screen_dark';
 
 function App() {
   return (
-    <Login_screen />
+    <Login_screen_dark />
   );
 }
 

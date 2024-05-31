@@ -1,6 +1,6 @@
 
 
-import './login_screen_dark.css';
+import './login_screen.css';
 
 function login_screen() {
   return (

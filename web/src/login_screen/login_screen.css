@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 body{
     font-family: 'Poppins', sans-serif;
-    background: #ececec;
+    background: #f0efef;
 }
 .box-area{
-    width: 930px;
+    width: 900px;
 }
 .right-box{
-    padding: 40px 30px 40px 40px;
+    padding: 40px 40px 40px 40px;
 }
 ::placeholder{
     font-size: 15px;
 }
-.rounded-2{
+.rounded-1{
     border-radius: 20px;
 }
-.rounded-1{
-    border-radius: 30px;
-}
+
 

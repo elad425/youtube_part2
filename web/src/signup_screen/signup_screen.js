@@ -81,7 +81,7 @@ function Signup_screen() {
                             <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
                             <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
 
-                            <div class="input-group mb-3">
+                            <div class="input-group mt-3 mb-3">
                                 <button class="btn btn-lg btn-primary w-100" onClick={signup_user} type='submit'>Sign up</button>
                             </div>
                         </div>

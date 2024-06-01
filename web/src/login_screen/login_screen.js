@@ -44,14 +44,11 @@ function login_screen() {
               </div>
               <div class="input-group mb-3">
                 <input type="text" class="form-control needs-validation form-control-lg bg-light fs-6" id="email" placeholder="Email address" ></input>
-                <div class="invalid-feedback needs-validation">
-                  wrong email address.
-                </div>
               </div>
               <div class="input-group mb-1">
                 <input type="password" class="form-control needs-validation form-control-lg bg-light fs-6" id="password" placeholder="Password" ></input>
                 <div class="invalid-feedback">
-                  wrong password.
+                  wrong email or password.
                 </div>
               </div>
               <div class="input-group mb-3 pt-5">
@@ -70,4 +67,4 @@ function login_screen() {
   );
 }
 
- 
+export default login_screen;

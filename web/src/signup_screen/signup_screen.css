@@ -1,0 +1,13 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #c5c5c5;
+}
+::placeholder{
+    font-size: 15px;
+}
+.rounded-1{
+    border-radius: 30px;
+}
+
+

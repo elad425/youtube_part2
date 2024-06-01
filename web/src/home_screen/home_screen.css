@@ -1,0 +1,17 @@
+.top_header {
+    display: flex;
+	justify-content:space-around ;
+    align-items: center;
+
+    margin-top: 20px;
+}
+.menu_and_button {
+    display: flex;
+	justify-content:space-around ;
+    align-items: center;
+
+}
+.site_containter {
+    display: flex;
+  flex-direction: column;
+}

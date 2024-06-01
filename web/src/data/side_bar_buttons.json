@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Home",
+      "link": "/Home",
+      "icon": "home.svg"
+    },
+    {
+      "name": "shorts",
+      "link": "/shorts",
+      "icon": "shorts.svg"
+    },
+    {
+      "name": "subscriptions",
+      "link": "/subscriptions",
+      "icon": "subscriptions.svg"
+    },
+    {
+        "name": "you",
+        "link": "/you",
+        "icon": "you.svg"
+      },
+      {
+        "name": "history",
+        "link": "/history",
+        "icon": "history.svg"
+      }
+
+  ]

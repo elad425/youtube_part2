@@ -3,7 +3,7 @@ import Signup_input from '../components/signup_input/signup_input';
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
-function Signup_screen({ usersList, setUserList }) {
+function Signup_screen({ usersList, setUserList, setUser, user}) {
     const navigate = useNavigate();
     const signup_user = () => {
         var email = document.getElementById("email").value;
@@ -40,7 +40,7 @@ function Signup_screen({ usersList, setUserList }) {
         } else {
             document.getElementById('password').classList.remove('is-invalid')
             // checks if both passwords are equal
-            if (password != con_password) {
+            if (password !== con_password) {
                 document.getElementById('con_password').classList.add('is-invalid')
                 valid = 0
             } else {
@@ -70,8 +70,9 @@ function Signup_screen({ usersList, setUserList }) {
                 form.classList.add('is-valid')
             })
             setUserList([...usersList, data])
+            setUser([user, data])
             setTimeout(() => {
-                navigate('/login');
+                navigate('/');
             }, 700);
         }
     }
@@ -87,10 +88,10 @@ function Signup_screen({ usersList, setUserList }) {
                                 </div>
                                 <a>please fill the following fields</a>
                             </div>
-                            <Signup_input id="user_name" placeholder="user name" invalid="please enter user name" type="text" />
+                            <Signup_input id="user_name" placeholder="User name" invalid="please enter user name" type="text" />
                             <Signup_input id="email" placeholder="Email adress" invalid="invalid email adress or email already exists" type="text" />
                             <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
-                            <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
+                            <Signup_input id="con_password" placeholder="Confirm password" invalid="password doesnt match" type="password" />
                             <div class="mb-1">
                                 <small className="">select profile picture</small>
                                 <input class="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture"></input>

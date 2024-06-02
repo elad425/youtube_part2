@@ -1,32 +1,33 @@
-
 import './login_screen.css';
-import user_data from '../user_info.json';
+import {Link} from 'react-router-dom'
 
-const Verify_user = () => {
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
+function login_screen({usersList}) {
 
-  for (const user of user_data) {
-    if (user.email === email) {
-      if (user.password === password) {
-        document.getElementById('email').classList.remove('is-invalid')
-        document.getElementById('password').classList.remove('is-invalid')
-        document.getElementById('email').classList.add('is-valid')
-        document.getElementById('password').classList.add('is-valid')
-        
-      }else {
-        document.getElementById('email').classList.remove('is-valid')
-        document.getElementById('password').classList.remove('is-valid')
-        document.getElementById('email').classList.add('is-invalid')
-        document.getElementById('password').classList.add('is-invalid')
-    } 
+  const Verify_user = () => {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+  
+    for (const user of usersList) {
+      if (user.email === email) {
+        if (user.password === password) {
+          document.getElementById('email').classList.remove('is-invalid')
+          document.getElementById('password').classList.remove('is-invalid')
+          document.getElementById('email').classList.add('is-valid')
+          document.getElementById('password').classList.add('is-valid')
+          
+        }else {
+          document.getElementById('email').classList.remove('is-valid')
+          document.getElementById('password').classList.remove('is-valid')
+          document.getElementById('email').classList.add('is-invalid')
+          document.getElementById('password').classList.add('is-invalid')
+      } 
+      }
     }
+    console.log(usersList)
   }
-}
 
-function login_screen() {
   return (
-    <body>
+    
       <div className="container d-flex justify-content-center align-items-center vh-100">
         <div className="row border rounded-1 p-3 bg-light shadow box-area">
           <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
@@ -38,7 +39,7 @@ function login_screen() {
             <div className="row align-items-center">
               <div className="header-text mb-4">
                 <h1>Hello</h1>
-                <t>please verify yourself</t>
+                <a>please verify yourself</a>
               </div>
               <div className="input-group mb-3">
                 <input type="text" className="form-control needs-validation form-control-lg bg-light fs-6" id="email" placeholder="Email address" ></input>
@@ -54,14 +55,14 @@ function login_screen() {
               </div>
               <div className="row">
                 <div className="col">
-                  <small>Don't have account? <a href="signup">Sign Up</a></small>
+                  <small>Don't have an account? <Link to="/signup">Sign up</Link></small>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </body>
+    
   );
 }
 

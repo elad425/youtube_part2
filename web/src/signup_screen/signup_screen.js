@@ -84,9 +84,15 @@ function Signup_screen() {
                             <div class="input-group mt-3 mb-3">
                                 <button class="btn btn-lg btn-primary w-100" onClick={signup_user} type='submit'>Sign up</button>
                             </div>
+                            <div className="row">
+                                <div className="col">
+                                    <small>already have an account? <a href="login">Sign Up</a></small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </body>
     );

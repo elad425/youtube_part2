@@ -56,7 +56,7 @@ function login_screen() {
               </div>
               <div className="row">
                 <div className="col">
-                  <small>Don't have account? <a href="#">Sign Up</a></small>
+                  <small>Don't have account? <a href="signup">Sign Up</a></small>
                 </div>
               </div>
             </div>

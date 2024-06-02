@@ -5,24 +5,22 @@ import user_data from '../user_info.json';
 const Verify_user = () => {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
-  const forms = document.querySelectorAll('.needs-validation')
 
-  forms.forEach(form => {
-    form.classNameList.remove('is-valid')
-    form.classNameList.add('is-invalid')
-  })
-
-  var i = 0
-  while (i < user_data.length) {
-    if (user_data[i].email === email) {
-      if (user_data[i].password === password) {
-        forms.forEach(form => {
-          form.classNameList.remove('is-invalid')
-          form.classNameList.add('is-valid')
-        })
-      }
+  for (const user of user_data) {
+    if (user.email === email) {
+      if (user.password === password) {
+        document.getElementById('email').classList.remove('is-invalid')
+        document.getElementById('password').classList.remove('is-invalid')
+        document.getElementById('email').classList.add('is-valid')
+        document.getElementById('password').classList.add('is-valid')
+        
+      }else {
+        document.getElementById('email').classList.remove('is-valid')
+        document.getElementById('password').classList.remove('is-valid')
+        document.getElementById('email').classList.add('is-invalid')
+        document.getElementById('password').classList.add('is-invalid')
+    } 
     }
-    i += 1;
   }
 }
 
@@ -40,7 +38,7 @@ function login_screen() {
             <div className="row align-items-center">
               <div className="header-text mb-4">
                 <h1>Hello</h1>
-                <t>please varify yourself</t>
+                <t>please verify yourself</t>
               </div>
               <div className="input-group mb-3">
                 <input type="text" className="form-control needs-validation form-control-lg bg-light fs-6" id="email" placeholder="Email address" ></input>

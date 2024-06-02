@@ -9,12 +9,13 @@ import user_data from './user_info.json';
 
 function App() {
   const [usersList, setUserList] = useState(user_data)
+  const [user, setUser] = useState(null)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home_screen />} />
+        <Route path="/" element={<Home_screen user={user} />} />
         <Route path="signup" element={<Signup_screen usersList={usersList} setUserList={setUserList} />} />
-        <Route path="login" element={<Login_screen usersList={usersList} />} />
+        <Route path="login" element={<Login_screen usersList={usersList} setUser={setUser} user={user}  />} />
 
       </Routes>
     </BrowserRouter>

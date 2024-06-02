@@ -60,7 +60,6 @@ function Signup_screen({usersList, setUserList}) {
             })
             setUserList([...usersList, data])
         }
-        console.log(usersList)
     }
     return (
         

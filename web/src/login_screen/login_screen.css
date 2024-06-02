@@ -21,9 +21,18 @@ body{
     width: 200px;
 }
 .login{
-    background-color: #cbcbcb;
+    background-color: #ad0f0f;
 }
 .rounded{
     border-radius: 30px;
 }
-
+.btn{
+    background-color: #000;
+    border-color: #000;
+    
+}
+.btn:hover{
+    background-color: #ad0f0f;
+    border-color: #ad0f0f;
+    
+}

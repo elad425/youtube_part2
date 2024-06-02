@@ -8,8 +8,6 @@ function Login_screen({ usersList, setUser, user }) {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    document.getElementById('email').classList.remove('is-valid')
-    document.getElementById('password').classList.remove('is-valid')
     document.getElementById('email').classList.add('is-invalid')
     document.getElementById('password').classList.add('is-invalid')
 
@@ -54,7 +52,7 @@ function Login_screen({ usersList, setUser, user }) {
                 wrong email or password.
               </div>
             </div>
-            <div className="input-group mb-2 pt-5">
+            <div className="input-group mb-2 pt-4">
               <button className="btn btn-lg btn-primary w-100" onClick={Verify_user} type='submit'>Login</button>
             </div>
             <div className="row">

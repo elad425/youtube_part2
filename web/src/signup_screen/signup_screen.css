@@ -10,7 +10,15 @@ body{
     width: 500px;
 }
 .signup{
-    background-color: #cbcbcb;
+    background-color: #ad0f0f;
 }
-
-
+.btn{
+    background-color: #000;
+    border-color: #000;
+    
+}
+.btn:hover{
+    background-color: #ad0f0f;
+    border-color: #ad0f0f;
+    
+}

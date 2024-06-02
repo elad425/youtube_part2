@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react'
 import user_data from './user_info.json';
 
-
 function App() {
   const [usersList, setUserList] = useState(user_data)
   const [user, setUser] = useState(null)

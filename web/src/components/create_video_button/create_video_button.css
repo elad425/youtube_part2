@@ -1,10 +1,10 @@
-.burger_menu{
+.create-btn{
     background: none;
     border: none;
-    border-radius: 50%;
-    padding: 0.5rem;
+    border-radius: 100%;
+    padding: 0.3rem;
     transition: box-shadow 0.3s ease;
 }
-.burger_menu:hover{
+.create-btn:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.269);
 }

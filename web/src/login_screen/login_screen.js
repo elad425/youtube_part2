@@ -33,7 +33,7 @@ function Login_screen({ usersList, setUser, user }) {
   return (
 
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="row border rounded-1 p-3 bg-light shadow box-area">
+      <div className="row border rounded-2 p-3 bg-light shadow box-area">
         <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
           <div className="featured-image mb-3">
             <img src="youtube.png" className="img-fluid p-3" alt="Responsive image"></img>

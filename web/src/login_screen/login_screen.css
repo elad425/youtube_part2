@@ -14,8 +14,11 @@ body{
 .left-box{
     padding: 50px 50px 50px 50px;
 }
-.rounded-1{
+.rounded-2{
     border-radius: 30px;
+}
+.costume{
+    width: 200px;
 }
 
 

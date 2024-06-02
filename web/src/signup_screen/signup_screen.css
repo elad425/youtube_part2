@@ -5,8 +5,10 @@ body{
 ::placeholder{
     font-size: 15px;
 }
+
 .rounded-1{
     border-radius: 30px;
+    width: 500px;
 }
 
 

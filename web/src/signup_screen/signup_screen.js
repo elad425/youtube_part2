@@ -1,9 +1,9 @@
 import './signup_screen.css';
 import Signup_input from '../components/signup_input/signup_input';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Signup_screen({usersList, setUserList}) {
-    
+function Signup_screen({ usersList, setUserList }) {
+
     const signup_user = () => {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
@@ -11,7 +11,7 @@ function Signup_screen({usersList, setUserList}) {
         var user_name = document.getElementById("user_name").value;
         const regex = /^(?=.*[A-Za-z])(?=.*\d)/;
         var valid = 1
-        
+
         //checks if name not empty
         if (user_name === '') {
             document.getElementById('user_name').classList.add('is-invalid')
@@ -62,40 +62,37 @@ function Signup_screen({usersList, setUserList}) {
         }
     }
     return (
-        
-            <div className="container d-flex justify-content-center align-items-center vh-100">
-                <div className="row border rounded-1 p-3 bg-light shadow box-area">
-                    <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
-                        <div className="featured-image mb-3">
-                            <img src="youtube.png" className="img-fluid p-3" alt="Responsive image"></img>
+
+        <div className="container d-flex justify-content-center align-items-center vh-100">
+            <div className="row border rounded-1 p-3 bg-light shadow box-area">
+                <div className="col-md-12">
+                    <div className="row align-items-center">
+                        <div className="header-text mb-4">
+                            <div className="featured-image mb-3">
+                                <img src="youtube_text.png" className="img-fluid ml-2 costume" alt="Responsive image"></img>
+                            </div>
+                            <a>please fill the required fields</a>
                         </div>
-                    </div>
-                    <div className="col-md-6 right-box">
-                        <div className="row align-items-center">
-                            <div className="header-text mb-4">
-                                <h1>Sign up!</h1>
-                                <a>please fill the required fields</a>
-                            </div>
 
-                            <Signup_input id="user_name" placeholder="user name" invalid="please enter user name" type="text" />
-                            <Signup_input id="email" placeholder="Email adress" invalid="invalid email adress or email already exists" type="text" />
-                            <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
-                            <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
+                        <Signup_input id="user_name" placeholder="user name" invalid="please enter user name" type="text" />
+                        <Signup_input id="email" placeholder="Email adress" invalid="invalid email adress or email already exists" type="text" />
+                        <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
+                        <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
 
-                            <div className="input-group mt-3 mb-3">
-                                <button className="btn btn-lg btn-primary w-100" onClick={signup_user} type='submit'>Sign up</button>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <small>already have an account? <Link to="/login">Log in</Link></small>
-                                </div>
+                        <div className="input-group mt-3 mb-3">
+                            <button className="btn btn-lg btn-primary w-100" onClick={signup_user} type='submit'>Sign up</button>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <small>already have an account? <Link to="/login">Log in</Link></small>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        
+
+        </div>
+
     );
 }
 

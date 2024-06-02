@@ -20,5 +20,10 @@ body{
 .costume{
     width: 200px;
 }
-
+.login{
+    background-color: #cbcbcb;
+}
+.rounded{
+    border-radius: 30px;
+}
 

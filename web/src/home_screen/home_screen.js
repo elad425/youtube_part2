@@ -12,7 +12,6 @@ import Video_list from '../components/video_list/video_list';
 import './home_screen.css'
 function Home_screen({user}) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };

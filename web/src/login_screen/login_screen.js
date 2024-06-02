@@ -31,12 +31,12 @@ function Login_screen({ usersList, setUser, user }) {
   }
 
   return (
-
+<div className="login">
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="row border rounded-2 p-3 bg-light shadow box-area">
+      <div className="row border rounded-2 p-2 bg-light shadow box-area">
         <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
           <div className="featured-image mb-3">
-            <img src="youtube.png" className="img-fluid p-3" alt="Responsive image"></img>
+            <img src="youtube.png" className="img-fluid p-4" alt="Responsive image"></img>
           </div>
         </div>
         <div className="col-md-6 right-box">
@@ -54,7 +54,7 @@ function Login_screen({ usersList, setUser, user }) {
                 wrong email or password.
               </div>
             </div>
-            <div className="input-group mb-3 pt-5">
+            <div className="input-group mb-2 pt-5">
               <button className="btn btn-lg btn-primary w-100" onClick={Verify_user} type='submit'>Login</button>
             </div>
             <div className="row">
@@ -66,7 +66,7 @@ function Login_screen({ usersList, setUser, user }) {
         </div>
       </div>
     </div>
-
+    </div>
   );
 }
 

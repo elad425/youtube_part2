@@ -12,12 +12,12 @@ body{
 .signup{
     background-color: #ad0f0f;
 }
-.btn{
+.submit{
     background-color: #000;
     border-color: #000;
     
 }
-.btn:hover{
+.submit:hover{
     background-color: #ad0f0f;
     border-color: #ad0f0f;
     

@@ -80,7 +80,7 @@ function Signup_screen({ usersList, setUserList, setUser, user}) {
                                 </div>
                             </div>
                             <div className="input-group mt-4 mb-2">
-                                <button className="btn btn-lg btn-primary w-100" onClick={validate_user} type='submit'>Sign up</button>
+                                <button className="btn btn-lg btn-primary w-100 submit" onClick={validate_user} type='submit'>Sign up</button>
                             </div>
                             <div className="row">
                                 <div className="col">

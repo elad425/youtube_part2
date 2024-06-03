@@ -53,7 +53,7 @@ function Login_screen({ usersList, setUser, user }) {
               </div>
             </div>
             <div className="input-group mb-2 pt-4">
-              <button className="btn btn-lg btn-primary w-100" onClick={Verify_user} type='submit'>Login</button>
+              <button className="btn btn-lg btn-primary w-100 submit" onClick={Verify_user} type='submit'>Login</button>
             </div>
             <div className="row">
               <div className="col">

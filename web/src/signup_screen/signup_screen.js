@@ -1,7 +1,6 @@
 import './signup_screen.css';
 import Signup_input from '../components/signup_input/signup_input';
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Signup_screen({ usersList, setUserList, setUser, user}) {
     const navigate = useNavigate();

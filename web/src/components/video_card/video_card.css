@@ -11,13 +11,13 @@
   
   
   
-  .video-container {
+  .video-card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: box-shadow 0.3s ease, border-radius 0.8s ease;
   }
-  .video-container:hover{
+  .video-card-container:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
   
@@ -111,6 +111,8 @@
   .views{
     margin-right: 0.3rem;
   }
-  
+  .video-container{
+    display: none;
+  }
   
   

@@ -5,7 +5,7 @@ import Video_upload_modal from './video_upload_modal/video_upload_modal';
 import Video_details_modal from './video_details_modal/video_details_modal';
 
 
-function Upload_popup({ closeModal }) {
+function Upload_popup({ closeModal,addVideo }) {
   const [popupScreen, setPopupScreen] = useState(false);
   const [file, setFile] = useState(null);
 
@@ -17,7 +17,7 @@ function Upload_popup({ closeModal }) {
     setFile(selectedFile);
     setPopupScreen(true);
   };
-
+  
   return (
     <div className="modal-container">
       <div className="modal fade show" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style={{ display: 'block' }}>
@@ -30,7 +30,7 @@ function Upload_popup({ closeModal }) {
               
             </div>
             <div className="modal-body">
-            {popupScreen ? <Video_details_modal togglePopup={togglePopup}  file={file} /> : <Video_upload_modal togglePopup={togglePopup}  handleFileUpload={handleFileUpload}/>}
+            {popupScreen ? <Video_details_modal togglePopup={togglePopup} closeModal={closeModal} addVideo={addVideo} file={file} /> : <Video_upload_modal togglePopup={togglePopup}  handleFileUpload={handleFileUpload}/>}
             </div>
           </div>
         </div>

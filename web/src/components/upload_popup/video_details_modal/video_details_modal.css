@@ -1,8 +1,8 @@
 .inputs{
     display: flex;
     flex-direction: column;
-    margin-left: 34px;
     height: 50%;
+    margin-bottom: 2em;
 }
 
 .input-title{
@@ -17,8 +17,6 @@
 }
 
 .details-span{
-    margin-left: 34px;
-    margin-bottom: 20px;
     font-family: "Roboto",Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     font-weight: bold;
@@ -26,6 +24,7 @@
 .details-popup{
     display: flex;
     width: 100%;
+    height: 80%;
 }
 
 .video-file {
@@ -48,4 +47,50 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+.custom-file-upload {
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.107);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 30%;
+    height: 20%;
+    font-size: 0.7em;
+    transition: border-color 0.3s ease;
+}
+.custom-file-upload:hover{
+    border-color: rgba(0, 0, 0, 0.228)
+    
+}
+
+.thumb-input {
+    display: none;
+}
+.thumbnail-body{
+    display: flex;
+    flex-direction: column;
+}
+.thumb-span{
+    font-weight: bold;
+}
+.thumb-detail{
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+.details-modal{
+    margin-left: 34px;
+}
+.next-btn-container{
+    height: 10%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.details-span-container{
+    height: 10%;
+   
 }

@@ -1,5 +1,5 @@
 import './video_card.css'
-function video_card({ id, title, channel, views, date, thumbnail, channel_icon }) {
+function Video_card({ id, title, channel, views, date, thumbnail, channel_icon }) {
     return (
         <div className="video-container">
             <a href="#" class="thumbnail">
@@ -23,4 +23,4 @@ function video_card({ id, title, channel, views, date, thumbnail, channel_icon }
 
     );
 }
-export default video_card
+export default Video_card

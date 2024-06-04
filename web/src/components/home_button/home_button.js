@@ -1,6 +1,6 @@
 import { ReactComponent as Home_button_icon} from './home_button.svg'
 import './home_button.css'
-function home_button() {
+function Home_button() {
     
     return (
         <div className="home_button_div">
@@ -10,4 +10,4 @@ function home_button() {
 
     
 }
-export default home_button;
+export default Home_button;

@@ -1,5 +1,5 @@
 import './video_filter_buttons.css'
-function video_filter_buttons() {
+function Video_filter_buttons() {
 
     return (
         <div className="filter_container">
@@ -18,4 +18,4 @@ function video_filter_buttons() {
     );
 
 
-} export default video_filter_buttons;
+} export default Video_filter_buttons;

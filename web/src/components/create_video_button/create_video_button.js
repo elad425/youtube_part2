@@ -1,12 +1,12 @@
 import { ReactComponent as Create } from './create.svg'
 import './create_video_button.css'
+import React from 'react';
 
-function create_video_button() {
+function Create_video_button({onClick}) {
+ 
   return (
-      <button className="create-btn"><Create /></button>
-
-
+      <button class="create-btn" onClick={onClick}><Create /></button>
   );
 }
-export default create_video_button;
+export default Create_video_button;
 

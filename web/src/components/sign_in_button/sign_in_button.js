@@ -2,7 +2,7 @@ import { ReactComponent as Person_circle} from './person_circle.svg'
 import './sign_in_button.css'
 import {Link} from 'react-router-dom'
 
-function sign_in_button() {
+function Sign_in_button() {
 return (
     <div class ="button_div">
       <Link to="/signup"><button class="sign_in_button"><Person_circle />sign in</button></Link>
@@ -10,5 +10,5 @@ return (
      
     );
 }
-export default sign_in_button;
+export default Sign_in_button;
 

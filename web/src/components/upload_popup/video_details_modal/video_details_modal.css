@@ -1,0 +1,51 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-left: 34px;
+    height: 50%;
+}
+
+.input-title{
+    height: 30%;
+    font-family: "Roboto";
+    margin-bottom: 20px;
+}
+.input-desc{
+    height: 50%;
+    font-family: "Roboto";
+    margin-bottom: 20px;
+}
+
+.details-span{
+    margin-left: 34px;
+    margin-bottom: 20px;
+    font-family: "Roboto",Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.details-popup{
+    display: flex;
+    width: 100%;
+}
+
+.video-file {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 25%; /* Set a fixed height */
+}
+.details-body{
+    width: 60%;
+    height: 100%;
+    
+}
+.mini-video{
+    display: flex;
+    width: 30%;
+    margin-left: 25px;
+}
+.details-modal{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

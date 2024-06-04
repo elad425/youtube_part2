@@ -59,7 +59,5 @@ body {
 
 .btn-text {
     font-size: 0.6rem; /* Changed from 16px to 1rem */
-    font-family: "Roboto", sans-serif;
     color: black;
-    
 }

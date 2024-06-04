@@ -12,7 +12,7 @@ import { ReactComponent as Sports } from './icons/sports.svg'
 import { ReactComponent as Podcasts } from './icons/podcasts.svg'
 
 import Sign_in_button from '../sign_in_button/sign_in_button';
-function side_bar() {
+function Side_bar() {
 
    return (
       <div className="side_bar">
@@ -80,4 +80,4 @@ function side_bar() {
 
 
 }
-export default side_bar;
+export default Side_bar;

@@ -1,14 +1,14 @@
-import { ReactComponent as Burger_menu } from './burger_menu.svg'
+import { ReactComponent as BurgerMenu } from './burger_menu.svg'
 import './burger_menu.css'
 
-function burger_menu({ toggleSidebar }) {
+function Burger_Menu({ toggleSidebar }) {
   return (
     <div className="button_div">
       <button className="burger_menu" onClick={toggleSidebar}>
-        <Burger_menu />
+        <BurgerMenu />
       </button>
     </div>
   );
 }
-export default burger_menu;
+export default Burger_Menu;
 

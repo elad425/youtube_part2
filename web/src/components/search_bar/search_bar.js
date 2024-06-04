@@ -1,6 +1,6 @@
 import { ReactComponent as Search_icon } from './search_icon.svg'
 import './search_bar.css'
-function search_bar() {
+function Search_bar() {
 
     return (
         <div className="search_bar">
@@ -14,4 +14,4 @@ function search_bar() {
     );
 
 
-} export default search_bar;
+} export default Search_bar;

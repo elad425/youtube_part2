@@ -26,8 +26,15 @@
 }
 .under-video-details-container{
     background-color: rgb(242, 242, 242);
+    border: none;
+    border-radius: 0.5em;
     padding: 0.5em;
     margin-bottom: 1em;
+}
+body.dark-mode-enabled .under-video-details-container {
+  
+    background-color: #222222;
+    
 }
 .under-video-desc{
     font-family: "Roboto";

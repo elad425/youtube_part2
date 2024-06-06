@@ -92,11 +92,7 @@ body {
 .video-channel-name {
   margin-bottom: .1rem;
   text-decoration: none;
-  transition: color 150ms;
-}
-
-.video-channel-name:hover {
-  color: #111;
+  color: black;
 }
 
 .video-channel-name,

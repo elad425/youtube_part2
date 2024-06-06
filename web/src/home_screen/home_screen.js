@@ -12,6 +12,7 @@ import Upload_popup from '../components/upload_popup/upload_popup';
 import Videos from '../data/video_data.json'
 import Video from '../components/video_card/video_card';
 import Video_Watch from '../components/video_watch/video_watch'
+import Dark_mode_btn from '../components/dark-mode-btn/dark-mode-btn';
 import './home_screen.css';
 
 function Home_screen() {
@@ -84,6 +85,7 @@ function Home_screen() {
         </div>
         <Search_bar />
         <Create_button onClick={toggleModal} />
+        <Dark_mode_btn/>
         <Sign_in_button />
       </div>
       <div className="page-container">

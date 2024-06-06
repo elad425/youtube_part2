@@ -12,8 +12,15 @@
     border: none;
     border-radius: 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.174);
-    padding: 0px;
+    padding: 0.5em;
+    border-radius: 0.5em;
     
+}
+body.dark-mode-enabled .comment-input{
+    background-color: #222222;
+}
+body.dark-mode-enabled .comment-input::placeholder{
+    color: white;
 }
 
 .comment-input:focus{
@@ -33,6 +40,14 @@
     padding-left: 1em;
     padding-right: 1em;
     transition: background-color 0.2s ease;
+}
+body.dark-mode-enabled .add-comment-button-container button {
+  
+    background-color: #222222;
+}
+body.dark-mode-enabled .add-comment-button-container button:hover {
+  
+    background-color: #272727;
 }
 .add-comment-button-container button:hover{
     background-color: rgba(0, 0, 0, 0.158);

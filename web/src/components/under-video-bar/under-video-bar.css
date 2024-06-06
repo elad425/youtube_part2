@@ -25,7 +25,9 @@
     margin-top: 1em;
 }
 .under-video-details-container{
-    background-color: rgb(242, 242, 242)
+    background-color: rgb(242, 242, 242);
+    padding: 0.5em;
+    margin-bottom: 1em;
 }
 .under-video-desc{
     font-family: "Roboto";
@@ -36,9 +38,17 @@
 .under-btn:active {
     background-color: rgb(0, 0, 0);
 }
+.comments-title{
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 1em;
+}
  
 
 
 .under-btn:active:active {
     background-color:rgba(0, 0, 0, 0.094);
 }  
+.views-under-span{
+    margin-right: 1em;
+}

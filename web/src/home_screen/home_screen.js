@@ -65,12 +65,15 @@ function Home_screen() {
       "isLocal": false
     }
     setIsVideoWatched(true);
-
+    console.log("teaag")
+    console.log(video)
+    console.log("teaag")    
     setVideoBeingWatched(new_video);
   }
   const returnToHome = () => {
     setIsVideoWatched(false);
   }
+  
 
   return (
     <div className="site_container">

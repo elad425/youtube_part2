@@ -30,7 +30,7 @@ function Upload_popup({ closeModal,addVideo }) {
               
             </div>
             <div className="modal-body">
-            {popupScreen ? <Video_details_modal togglePopup={togglePopup} closeModal={closeModal} addVideo={addVideo} file={file} /> : <Video_upload_modal togglePopup={togglePopup}  handleFileUpload={handleFileUpload}/>}
+            {popupScreen ? <Video_details_modal togglePopup={togglePopup} closeModal={closeModal} addVideo={addVideo} video_file={file} /> : <Video_upload_modal togglePopup={togglePopup}  handleFileUpload={handleFileUpload}/>}
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ function Closed_side_bar() {
         <div className="closed_side_bar">
 
             <div className="closed_side_bar_container">
-                <lu className="list">
+                <div className="list">
                     <li>
                         <a href='#' className="closed_btn" >
                             <Home_icon />
@@ -21,7 +21,7 @@ function Closed_side_bar() {
                     <li>
                         <a href='#' className="closed_btn" >
                             <Shorts_icon />
-                            <span className="btn-text">Home</span>
+                            <span className="btn-text">Shorts</span>
                         </a>
                     </li>
                     <li>
@@ -42,7 +42,7 @@ function Closed_side_bar() {
                             <span className="btn-text">History</span>
                         </a>
                     </li>
-                </lu>
+                </div>
             </div>
         </div>
     );

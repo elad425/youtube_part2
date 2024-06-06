@@ -27,7 +27,7 @@
     height: 80%;
 }
 
-.video-file {
+.mini-video-file {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -93,4 +93,7 @@
 .details-span-container{
     height: 10%;
    
+}
+#canvas{
+    display: none;
 }

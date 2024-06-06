@@ -91,7 +91,7 @@ function Signup_screen({ usersList, setUserList }) {
                             <Signup_input id="email" placeholder="Email adress" invalid="invalid email adress or email already exists" type="text" />
                             <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
                             <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
-                            <div class="mb-1">
+                            <div className="mb-1">
                                 <small className="">select profile picture</small>
                                 <input class="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture"></input>
                                 <div className="invalid-feedback">

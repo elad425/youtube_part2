@@ -8,7 +8,7 @@ function Video_upload_modal({ togglePopup, handleFileUpload }) {
     const [error, setError] = useState('');
     const fileInputRef = useRef(null);
 
-    const validVideoExtensions = ['mp4', 'avi', 'mkv', 'mov', 'wmv'];
+    const validVideoExtensions = ['mp4', 'avi', 'mkv', 'mov', 'wmv','webm'];
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];

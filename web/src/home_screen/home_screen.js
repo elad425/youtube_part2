@@ -11,13 +11,16 @@ import Video_filter_buttons from '../components/video_filter_buttons/video_filte
 import Upload_popup from '../components/upload_popup/upload_popup';
 import Videos from '../data/video_data.json'
 import Video from '../components/video_card/video_card';
-
+import Video_Watch from '../components/video_watch/video_watch'
 import './home_screen.css';
 
 function Home_screen() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoList, setVideoList] = useState(Videos)
+  const [idNum, setIdNum] = useState(11);
+  const [isVideoWatched, setIsVideoWatched] = useState(false);
+  const [videoBeingWatched, setVideoBeingWatched] = useState("");
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -25,48 +28,87 @@ function Home_screen() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-   const addVideo = (title,channel, description, thumbnail, video,channel_icon) => {
-    console.log("adding stuff")
-    console.log(thumbnail)
-    const objectUrl = URL.createObjectURL(thumbnail); 
+  const addVideo = (title, description, channel, thumbnail, channel_icon, video_file, isUploadedThumb) => {
+    let url = thumbnail;
+    if (isUploadedThumb) {
+      url = URL.createObjectURL(thumbnail);
+    }
+    let url2 = URL.createObjectURL(video_file)
     const new_video = {
-      "id": 11,
-      "title": "title",
-      "channel": "chanhellgagdagag",
+      "id": { idNum },
+      "title": title,
+      "description": description,
+      "channel": channel,
       "views": 0,
       "date": "today",
-      "thumbnail": objectUrl,
+      "thumbnail": url,
       "channel_icon": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/thumbnail-background-youtube-2023-design-template-d1ba8caa87a7e45a222132372cd336a7_screen.jpg?ts=1674608286",
+      "video": url2,
+      "isLocal": false
+
     }
-    setVideoList([...videoList,new_video])
+    setIdNum(idNum + 1)
+    setVideoList([...videoList, new_video])
   }
 
+  const toggleVideoView = (title, description, channel, views, date, thumbnail, channel_icon, video, isVideo) => {
+    const new_video = {
+      "id": { idNum },
+      "title": title,
+      "description": description,
+      "channel": channel,
+      "views": views,
+      "date": date,
+      "thumbnail": thumbnail,
+      "channel_icon": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/thumbnail-background-youtube-2023-design-template-d1ba8caa87a7e45a222132372cd336a7_screen.jpg?ts=1674608286",
+      "video": video,
+      "isLocal": false
+    }
+    setIsVideoWatched(true);
 
+    setVideoBeingWatched(new_video);
+  }
+  const returnToHome = () => {
+    setIsVideoWatched(false);
+  }
 
   return (
     <div className="site_container">
       <div className="top_header">
         <div className="menu_and_button">
           <Burger_menu toggleSidebar={toggleSidebar} />
-          <Home_button />
+          <Home_button returnToHome={returnToHome} />
         </div>
         <Search_bar />
         <Create_button onClick={toggleModal} />
         <Sign_in_button />
       </div>
-      <div className="body-container">
-        {isModalOpen && <Upload_popup closeModal={toggleModal} addVideo={addVideo}/>}
-        {isSidebarOpen ? <Side_bar /> : <Closed_side_bar />}
-        <div className="video-page-container">
-          <Video_filter_buttons />
-          <div className='videos-container-grid'>
-            {
-              videoList.map((video) =>
-                <Video {...video} />
-              )
-            }
+      <div className="page-container">
+
+        {isModalOpen && <Upload_popup closeModal={toggleModal} addVideo={addVideo} />}
+
+        {!isVideoWatched ? (
+          <div className="body-container">
+            {isSidebarOpen ? <Side_bar /> : <Closed_side_bar />}
+            <div className={isSidebarOpen ? 'video-page-container-reduced' : 'video-page-container-full'}>
+              <Video_filter_buttons />
+              <div className='videos-container-grid'>
+                {
+                  videoList.map((video) =>
+                    <Video {...video} toggleView={toggleVideoView} />
+                  )
+                }
+              </div>
+            </div>
+
           </div>
-        </div>
+        )
+          : (
+            <div className="watch-video-view-body">
+              <Video_Watch {...videoBeingWatched} videoList={videoList} toggleVideoView={toggleVideoView} />
+            </div>
+          )
+        }
       </div>
     </div>
   );

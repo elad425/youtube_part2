@@ -5,9 +5,9 @@ function Search_bar() {
     return (
         <div className="search_bar">
             <form>
-                <div class="search">
-                    <input class="search_input" type="search" placeholder="Search"></input>
-                    <span class="material-symbols-outlined search_icon">search</span>
+                <div className="search">
+                    <input className="search_input" type="search" placeholder="Search"></input>
+                    <span className="material-symbols-outlined search_icon">search</span>
                 </div>
             </form>
         </div>

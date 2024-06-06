@@ -5,7 +5,7 @@ import React from 'react';
 function Create_video_button({onClick}) {
  
   return (
-      <button class="create-btn" onClick={onClick}><Create /></button>
+      <button className="create-btn" onClick={onClick}><Create /></button>
   );
 }
 export default Create_video_button;

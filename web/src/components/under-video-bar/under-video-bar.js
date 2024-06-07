@@ -3,8 +3,15 @@ import Share_button from '../share-button/share-button'
 import Like_dislike_buttons from '../like_dislike_buttons/like_dislike_buttons';
 import React, { useEffect, useState } from 'react';
 import Add_comment_box from '../add_comment_box/add_comment_box';
-function Under_video_bar({ description, channel, views, date, channel_icon,addComment}) {
-
+function Under_video_bar({ description, channel, views, date, channel_icon,addComment,user}) {
+    console.log("agadgadgdga")
+    console.log(user)
+    let source =''
+    if (user!=null&&user[1].picture instanceof Blob) {
+        source = URL.createObjectURL(user[1].picture);
+    } else {
+        source = 'youtube_text.png'; // Provide a default image path
+    }
     const [activeButton, setActiveButton] = useState(null);
 
     const handleButtonClick = (buttonType) => {
@@ -35,7 +42,7 @@ function Under_video_bar({ description, channel, views, date, channel_icon,addCo
                
             </div>
             <span className="comments-title">Comments</span>
-            <Add_comment_box channel={channel} channel_icon={channel_icon} addComment={addComment}></Add_comment_box>
+            <Add_comment_box channel={channel} channel_icon={source} addComment={addComment} user={user}></Add_comment_box>
             
         </div>
     );

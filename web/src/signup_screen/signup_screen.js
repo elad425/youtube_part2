@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function Signup_screen({ usersList, setUserList }) {
+function Signup_screen({ usersList, setUserList,setIsUserLoggedIn }) {
     const [pictureFile,setPictureFile] = useState(null);
     const navigate = useNavigate();
     const handleUpload = (e)=>{

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 function Create_video_button({onClick,user}) {
  
   return (
-    user.user ? (
+    user? (
       <button className="create-btn" onClick={onClick}><Create /></button>
     ) : (
       <Link to="/signup">

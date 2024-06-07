@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: column;
 }
+.no-style-link {
+    text-decoration: none;
+    color: inherit;
+}
 .comment-input{
     border: none;
     border-radius: 0px;

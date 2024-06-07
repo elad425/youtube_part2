@@ -1,7 +1,8 @@
 import './add_comment_box.css';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Add_comment_box({ channel, channel_icon, addComment }) {
+function Add_comment_box({ channel, channel_icon, addComment, user }) {
     const [commentContent, setCommentContent] = useState('');
 
     const handleInputChange = (event) => {
@@ -14,7 +15,7 @@ function Add_comment_box({ channel, channel_icon, addComment }) {
         setCommentContent(''); // Reset the input field
     };
 
-    return (
+    const commentBoxContent = (
         <div className="add-comment-container">
             <div className="add-comment-icon-content">
                 <a href="#" className="icon-container">
@@ -32,6 +33,14 @@ function Add_comment_box({ channel, channel_icon, addComment }) {
                 <button className="comment-button">Comment</button>
             </div>
         </div>
+    );
+
+    return user ? (
+        commentBoxContent
+    ) : (
+        <Link to="/signup" className="no-style-link">
+            {commentBoxContent}
+        </Link>
     );
 }
 

@@ -2,7 +2,7 @@ import './login_screen.css';
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
-function Login_screen({ usersList, setUser, user }) {
+function Login_screen({ usersList, setUser, user,setIsUserLoggedIn }) {
   const navigate = useNavigate();
   const Verify_user = () => {
     var email = document.getElementById("email").value;
@@ -19,6 +19,7 @@ function Login_screen({ usersList, setUser, user }) {
           document.getElementById('email').classList.add('is-valid')
           document.getElementById('password').classList.add('is-valid')
           setUser([user, List_user])
+          setIsUserLoggedIn(true)
           setTimeout(() => {
             navigate('/');
           },700);

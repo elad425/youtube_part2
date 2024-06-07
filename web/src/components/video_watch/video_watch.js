@@ -4,7 +4,7 @@ import Under_video_section from '../under-video-bar/under-video-bar';
 import Video_side_bar from '../video_side_bar/video_side_bar';
 import Comment_box from '../comment_box/comment_box';
 
-function Video_watch({ id, title, description, channel, views, date, thumbnail, channel_icon, video, videoList, toggleVideoView }) {
+function Video_watch({ id, title, description, channel, views, date, thumbnail, channel_icon, video, videoList, toggleVideoView,user }) {
     const [videoCommentsList, setVideoCommentsList] = useState([]);
     const [videoDetails, setVideoDetails] = useState(null);
 
@@ -20,6 +20,35 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
             const updatedCommentsChannel = [...videoDetails.comments_channel, commentChannel1];
             const updatedCommentsChannelIcon = [...videoDetails.comments_channel_icon, commentChannel_icon1];
             const updatedCommentsDate = [...videoDetails.comments_date, commentDate1];
+
+            videoDetails.comments = updatedComments;
+            videoDetails.comments_channel = updatedCommentsChannel;
+            videoDetails.comments_channel_icon = updatedCommentsChannelIcon;
+            videoDetails.comments_date = updatedCommentsDate;
+
+            setVideoCommentsList(updatedComments);
+        }
+    };
+    const editComment = (index, newComment) => {
+        if (videoDetails) {
+            const updatedComments = [...videoDetails.comments];
+            updatedComments[index] = newComment;
+
+            videoDetails.comments = updatedComments;
+            setVideoCommentsList(updatedComments);
+        }
+    };
+    const deleteComment = (index) => {
+        if (videoDetails) {
+            const updatedComments = [...videoDetails.comments];
+            const updatedCommentsChannel = [...videoDetails.comments_channel];
+            const updatedCommentsChannelIcon = [...videoDetails.comments_channel_icon];
+            const updatedCommentsDate = [...videoDetails.comments_date];
+
+            updatedComments.splice(index, 1);
+            updatedCommentsChannel.splice(index, 1);
+            updatedCommentsChannelIcon.splice(index, 1);
+            updatedCommentsDate.splice(index, 1);
 
             videoDetails.comments = updatedComments;
             videoDetails.comments_channel = updatedCommentsChannel;
@@ -52,16 +81,20 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
                         views={views}
                         date={date}
                         channel_icon={channel_icon}
-                        addComment={addComment} />
+                        addComment={addComment} 
+                        user={user}/>
                 </div>
                 <div className="comments-container">
                     {videoCommentsList.map((comment, index) => (
                         <Comment_box
                             key={index}
+                            index={index}
                             comment={comment}
                             channel={videoDetails.comments_channel[index]}
                             channel_icon={videoDetails.comments_channel_icon[index]}
                             date={videoDetails.comments_date[index]}
+                            editComment={editComment}
+                            deleteComment={deleteComment}
                         />
                     ))}
                 </div>

@@ -4,14 +4,24 @@ import Under_video_section from '../under-video-bar/under-video-bar';
 import Video_side_bar from '../video_side_bar/video_side_bar';
 import Comment_box from '../comment_box/comment_box';
 
-function Video_watch({ id, title, description, channel, views, date, thumbnail, channel_icon, video, videoList, toggleVideoView,user }) {
+function Video_watch({ id, title, description, channel, views, date, thumbnail, channel_icon, video, videoList, toggleVideoView,user,userConnected,setVideoList,setSearchVideoList,toggleHomeView}) {
     const [videoCommentsList, setVideoCommentsList] = useState([]);
     const [videoDetails, setVideoDetails] = useState(null);
+    const [videoDesc,setVideoDesc] = useState(description)
+    const [editedTitle, setEditedTitle] = useState(title);
+    const [videoWatched,setVideoWatched]= useState(video)
+
+
 
     useEffect(() => {
-        const video = videoList.find(v => v.id === id);
-        setVideoDetails(video);
-        setVideoCommentsList(video ? video.comments || [] : []);
+        const video1 = videoList.find(v => v.id === id);
+        console.log(videoList)
+        console.log("video id is",id)
+        setVideoDetails(video1);
+        setVideoCommentsList(video1 ? video1.comments || [] : []);
+        setVideoDesc(video1.description)
+        setEditedTitle(video1.title)
+        setVideoWatched(video1.video)
     }, [id, videoList]);
 
     const addComment = (commentContent1, commentChannel1, commentChannel_icon1, commentDate1) => {
@@ -38,6 +48,21 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
             setVideoCommentsList(updatedComments);
         }
     };
+    const editVideo = ( newDesc,newTitle) => {
+            videoDetails.description=newDesc;
+            videoDetails.title=newTitle;
+            setVideoDesc(newDesc);
+            setEditedTitle(newTitle);
+
+    };
+    const deleteVideo =()=>{
+       
+        const updatedVideoList = videoList.filter(video => video.id !== id);
+        setVideoList(updatedVideoList);
+        setSearchVideoList(updatedVideoList)
+        
+        toggleHomeView()
+    }
     const deleteComment = (index) => {
         if (videoDetails) {
             const updatedComments = [...videoDetails.comments];
@@ -58,9 +83,10 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
             setVideoCommentsList(updatedComments);
         }
     };
-    const resetComments =(title3,description3,channel3,views3,date3,thumbnail3,channel_icon3,video3) =>{
+    const resetComments =(id) =>{
         setVideoCommentsList([]);
-        toggleVideoView(title3,description3,channel3,views3,date3,thumbnail3,channel_icon3,video3);
+        console.log("id",id)
+        toggleVideoView(id);
     }
     if (!videoDetails) return null;
 
@@ -68,21 +94,25 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
         <div className="video-watch-body">
             <div className="video-desc-comments-container">
                 <div className="video-watch-container">
-                    <video className="video-file" controls key={video}>
-                        <source src={video} type="video/mp4" />
+                    <video className="video-file" controls key={videoWatched} >
+                        <source src={videoWatched} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <span className='video-watch-title'>{title}</span>
+                <span className='video-watch-title'>{editedTitle}</span>
                 <div className="video-watch-btn-container">
                     <Under_video_section
-                        description={description}
-                        channel={channel}
-                        views={views}
-                        date={date}
-                        channel_icon={channel_icon}
+                        description={videoDesc}
+                        channel={videoDetails.channel}
+                        views={videoDetails.views}
+                        date={videoDetails.date}
+                        channel_icon={videoDetails.channel_icon}
                         addComment={addComment} 
-                        user={user}/>
+                        user={user}
+                        editVideo={editVideo}
+                        deleteVideo={deleteVideo}
+                        title={editedTitle}
+                        userConnected={userConnected}/>
                 </div>
                 <div className="comments-container">
                     {videoCommentsList.map((comment, index) => (

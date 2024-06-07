@@ -21,11 +21,10 @@ function Home_screen({ user, isUserLoggedIn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoList, setVideoList] = useState(Videos);
   const [searchVideoList,setSearchVideoList] =useState(Videos);
-  const [idNum, setIdNum] = useState(1);
+  const [idNum, setIdNum] = useState(11);
   const [isVideoWatched, setIsVideoWatched] = useState(false);
   const [videoBeingWatched, setVideoBeingWatched] = useState('');
-  console.log("homegagdg")
-  console.log(user)
+
   const addComment = (videoId, comment) => {
     setVideoList(prevVideoList =>
       prevVideoList.map(video =>
@@ -39,8 +38,7 @@ function Home_screen({ user, isUserLoggedIn }) {
   };
 
   const doSearch = (q) => {
-    console.log(videoList)
-    console.log("Here")
+ 
     setVideoList(searchVideoList.filter((video) => video.title.includes(q)));
   };
 
@@ -64,35 +62,26 @@ function Home_screen({ user, isUserLoggedIn }) {
       id: idNum,
       title: title,
       description: description,
-      channel: channel,
+      channel: user[1].user_name,
       views: 0,
       date: 'today',
       thumbnail: url,
       channel_icon: source,
       video: url2,
-      isLocal: false,
     };
     setIdNum(idNum + 1);
     setVideoList([...videoList, new_video]);
     setSearchVideoList([...searchVideoList, new_video]);
 
   };
-
-  const toggleVideoView = (id, title, description, channel, views, date, thumbnail, channel_icon, video, isVideo) => {
-    const new_video = {
-      id,
-      title,
-      description,
-      channel,
-      views,
-      date,
-      thumbnail,
-      channel_icon,
-      video,
-      isLocal: false,
-    };
-    setIsVideoWatched(true);
+  const toggleHomeView= ()=>{
+    setIsVideoWatched(false)
+  }
+  const toggleVideoView = (id) => {
+    const new_video = videoList.find(v => v.id === id);
+    console.log("new video is",new_video)
     setVideoBeingWatched(new_video);
+    setIsVideoWatched(true);
   };
 
   const returnToHome = () => {
@@ -133,6 +122,10 @@ function Home_screen({ user, isUserLoggedIn }) {
               toggleVideoView={toggleVideoView}
               addComment={addComment}
               user={user}
+              userConnected={isUserLoggedIn}
+              setVideoList={setVideoList}
+              setSearchVideoList={setSearchVideoList}
+              toggleHomeView={toggleHomeView}
             />
           </div>
         )}

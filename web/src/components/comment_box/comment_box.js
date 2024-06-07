@@ -4,7 +4,6 @@ import Like_dislike_buttons from '../like_dislike_buttons/like_dislike_buttons';
 import { ReactComponent as Dots_menu } from './dots-menu.svg';
 
 function Comment_box({ index,comment, channel, channel_icon, date,editComment ,deleteComment}) {
-    console.log("here comment",comment)
     const formattedDate = new Date(date).toLocaleDateString("en-US", {
         year: 'numeric',
         month: 'long',

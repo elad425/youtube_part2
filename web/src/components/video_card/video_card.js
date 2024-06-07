@@ -1,11 +1,11 @@
 import './video_card.css'
 import React, { useEffect, useState } from 'react';
 
-function Video_card({ id, title, description,channel, views, date, thumbnail, channel_icon,video,isLocal,toggleView }) {
-    const [videoState,setVideoState]=useState(null);
-   
-    const switchView = () =>{
-        toggleView(id,title,description,channel,views,date,thumbnail,channel_icon,video,true);
+function Video_card({ id, title, description, channel, views, date, thumbnail, channel_icon, video, isLocal, toggleView }) {
+    const [videoState, setVideoState] = useState(null);
+
+    const switchView = () => {
+        toggleView(id);
 
 
     }
@@ -15,10 +15,10 @@ function Video_card({ id, title, description,channel, views, date, thumbnail, ch
                 <img className="thumbnail-image" src={thumbnail} />
             </a>
             <div className="video-container">
-                     <video className="video-file" controls>
-                        <source src={video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                <video className="video-file" controls>
+                    <source src={video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div className="video-bottom-section">
                 <a href="#" className="icon-container">
@@ -33,6 +33,7 @@ function Video_card({ id, title, description,channel, views, date, thumbnail, ch
                         <span className="date">{date}</span>
                     </div>
                 </div>
+              
             </div>
         </div>
 

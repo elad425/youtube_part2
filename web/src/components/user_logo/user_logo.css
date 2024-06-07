@@ -2,11 +2,18 @@
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    margin-bottom: 0.2em;
+
 }
 .user-logo-container{
     padding: 1em;
     display: flex;
     flex-direction: column;
     width: max-content;
+}
+.user-logo-btn{
+    background: none;
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 0.2em;
+
 }

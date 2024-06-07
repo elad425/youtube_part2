@@ -8,19 +8,17 @@ import Side_bar from '../components/side_bar/side_bar';
 import Closed_side_bar from '../components/closed_side_bar/closed_side_bar';
 import Video_filter_buttons from '../components/video_filter_buttons/video_filter_buttons';
 import Upload_popup from '../components/upload_popup/upload_popup';
-import Videos from '../data/video_data.json';
 import Video from '../components/video_card/video_card';
 import Video_Watch from '../components/video_watch/video_watch';
 import Dark_mode_btn from '../components/dark-mode-btn/dark-mode-btn';
 import User_logo from '../components/user_logo/user_logo';
 import './home_screen.css';
 
-function Home_screen({ user, isUserLoggedIn }) {
+function Home_screen({ user, isUserLoggedIn,setUser,setIsUserLoggedIn,videoList,setVideoList,searchVideoList,setSearchVideoList }) {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [videoList, setVideoList] = useState(Videos);
-  const [searchVideoList,setSearchVideoList] =useState(Videos);
+  
   const [idNum, setIdNum] = useState(11);
   const [isVideoWatched, setIsVideoWatched] = useState(false);
   const [videoBeingWatched, setVideoBeingWatched] = useState('');
@@ -98,7 +96,7 @@ function Home_screen({ user, isUserLoggedIn }) {
         <Search_bar doSearch={doSearch} />
         <Create_button onClick={toggleModal} user={user} />
         <Dark_mode_btn />
-        {isUserLoggedIn ? <User_logo user={user} /> : <Sign_in_button />}
+        {isUserLoggedIn ? <User_logo user={user} setIsUserLoggedIn={setIsUserLoggedIn} setUser={setUser} /> : <Sign_in_button />}
       </div>
       <div className="page-container">
         {isModalOpen && <Upload_popup closeModal={toggleModal} addVideo={addVideo} />}

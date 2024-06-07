@@ -11,7 +11,7 @@ function Add_comment_box({ channel, channel_icon, addComment, user }) {
 
     const sendCommentDetails = () => {
         const date = new Date();
-        addComment(commentContent, channel, channel_icon, date);
+        addComment(commentContent, user[1].user_name, channel_icon, date);
         setCommentContent(''); // Reset the input field
     };
 

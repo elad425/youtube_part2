@@ -33,6 +33,7 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
 
             videoDetails.comments = updatedComments;
             videoDetails.comments_channel = updatedCommentsChannel;
+            console.log("updatedblah",updatedCommentsChannel)
             videoDetails.comments_channel_icon = updatedCommentsChannelIcon;
             videoDetails.comments_date = updatedCommentsDate;
 
@@ -125,6 +126,8 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
                             date={videoDetails.comments_date[index]}
                             editComment={editComment}
                             deleteComment={deleteComment}
+                            userConnected={userConnected}
+                            user={user}
                         />
                     ))}
                 </div>

@@ -2,17 +2,19 @@
     display: flex;
 	justify-content:space-between ;
     align-items: center;
+    height: 20%;
     margin-top: 20px;
-    margin-left: 20px;
     margin-right: 20px;
     
 }
-.menu_and_button {
+.menu-and-button{
     display: flex;
 	justify-content:space-around ;
     align-items: center;
-
+    margin-left:2em;
 }
+
+
 .site_containter {
     display: flex;
   flex-direction: column;

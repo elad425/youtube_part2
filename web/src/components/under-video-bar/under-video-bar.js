@@ -2,9 +2,8 @@ import './under-video-bar.css'
 import Share_button from '../share-button/share-button'
 import Like_dislike_buttons from '../like_dislike_buttons/like_dislike_buttons';
 import React, { useEffect, useState } from 'react';
-import Comment_box from '../comment_box/comment_box';
 import Add_comment_box from '../add_comment_box/add_comment_box';
-function Video_watch({ description, channel, views, date, channel_icon }) {
+function Under_video_bar({ description, channel, views, date, channel_icon,addComment}) {
 
     const [activeButton, setActiveButton] = useState(null);
 
@@ -36,9 +35,9 @@ function Video_watch({ description, channel, views, date, channel_icon }) {
                
             </div>
             <span className="comments-title">Comments</span>
-            <Add_comment_box></Add_comment_box>
-            <Comment_box channel={channel} channel_icon={channel_icon} date={"now"} comment={"Your boss can block your screenshots but Microsofts Ai does it themselves "}/>
+            <Add_comment_box channel={channel} channel_icon={channel_icon} addComment={addComment}></Add_comment_box>
+            
         </div>
     );
 }
-export default Video_watch
+export default Under_video_bar

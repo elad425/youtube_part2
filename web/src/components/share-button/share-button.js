@@ -7,14 +7,14 @@ function Share_button( ) {
   
     return (
         
-                <div class="dropdown">
+                <div className="dropdown">
                     <button className='share-btn btn btn-outline-primary under-btn dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false"><Share_icon />share</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Whatsapp</a></li>
-                        <li><hr class="dropdown-divider"></hr></li>
-                        <li><a class="dropdown-item" href="#">Facebook</a></li>
-                        <li><hr class="dropdown-divider"></hr></li>
-                        <li><a class="dropdown-item" href="#">Instagram</a></li>
+                    <ul className="dropdown-menu">
+                        <li><a className="dropdown-item" href="#">Whatsapp</a></li>
+                        <li><hr className="dropdown-divider"></hr></li>
+                        <li><a className="dropdown-item" href="#">Facebook</a></li>
+                        <li><hr className="dropdown-divider"></hr></li>
+                        <li><a className="dropdown-item" href="#">Instagram</a></li>
                     </ul>
                 </div>
            

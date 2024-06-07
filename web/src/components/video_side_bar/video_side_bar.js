@@ -7,7 +7,7 @@ function Video_side_bar({ videoList ,toggleVideoView}) {
         <div className='videos-bar'>
             {
                 videoList.map((video) =>
-                    <Video {...video} toggleView={toggleVideoView} />
+                    <Video key={video.id} {...video} toggleView={toggleVideoView} />
                 )
             }
         </div>

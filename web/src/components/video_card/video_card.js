@@ -5,10 +5,8 @@ function Video_card({ id, title, description,channel, views, date, thumbnail, ch
     const [videoState,setVideoState]=useState(null);
    
     const switchView = () =>{
-        toggleView(title,description,channel,views,date,thumbnail,channel_icon,video,true);
-        console.log("lets try")
-        console.log(video)
-        console.log("lets try")
+        toggleView(id,title,description,channel,views,date,thumbnail,channel_icon,video,true);
+
 
     }
     return (

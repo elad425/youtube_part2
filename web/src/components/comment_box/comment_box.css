@@ -1,10 +1,10 @@
 .comment-box-container{
     display: flex;
     width: 100%;
-    max-width: 60vw;
-    margin-top: 1em;
+    max-width: 63vw;
+    margin-top: 2em;
 }
-.comment-channel{
+.comment-channel-name{
     margin-right: 0.5em;
 }
 .comment-date{
@@ -19,4 +19,8 @@
 }
 .comment-like{
     width: 4px;
+}
+.comment-content-p{
+    font-size: 1em;
+    font-weight: 300;
 }

@@ -2,9 +2,14 @@ import './signup_screen.css';
 import Signup_input from '../components/signup_input/signup_input';
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function Signup_screen({ usersList, setUserList }) {
+    const [pictureFile,setPictureFile] = useState(null);
     const navigate = useNavigate();
+    const handleUpload = (e)=>{
+        setPictureFile(e.target.files[0])
+    }
     const signup_user = () => {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
@@ -63,7 +68,7 @@ function Signup_screen({ usersList, setUserList }) {
                 user_name: user_name,
                 email: email,
                 password: password,
-                picture : picture
+                picture : pictureFile
             }
             forms.forEach(form => {
                 form.classList.remove('is-invalid')
@@ -93,7 +98,7 @@ function Signup_screen({ usersList, setUserList }) {
                             <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
                             <div className="mb-1">
                                 <small className="">select profile picture</small>
-                                <input class="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture"></input>
+                                <input class="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture" onChange={handleUpload}></input>
                                 <div className="invalid-feedback">
                                     missing picture
                                 </div>

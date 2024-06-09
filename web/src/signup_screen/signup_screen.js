@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function Signup_screen({ usersList, setUserList,setIsUserLoggedIn }) {
-    const [pictureFile,setPictureFile] = useState(null);
+function Signup_screen({ usersList, setUserList, setIsUserLoggedIn ,setUser,user}) {
+    const [pictureFile, setPictureFile] = useState(null);
     const navigate = useNavigate();
-    const handleUpload = (e)=>{
+    const handleUpload = (e) => {
         setPictureFile(e.target.files[0])
     }
     const signup_user = () => {
+        const forms = document.querySelectorAll('.needs-validation')
 
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
@@ -25,8 +26,8 @@ function Signup_screen({ usersList, setUserList,setIsUserLoggedIn }) {
         })
 
         //checks if the email already exist
-        for (const List_user of usersList){
-            if (List_user.email === email){
+        for (const List_user of usersList) {
+            if (List_user.email === email) {
                 document.getElementById('email').classList.add('is-invalid')
                 break
             }
@@ -34,20 +35,20 @@ function Signup_screen({ usersList, setUserList,setIsUserLoggedIn }) {
 
         if (user_name === '') {
             document.getElementById('user_name').classList.add('is-invalid')
-        } else if ( email === ''){
+        } else if (email === '') {
             document.getElementById('email').classList.add('is-invalid')
-        } else if(!regex.test(password) || password.length < 8){
+        } else if (!regex.test(password) || password.length < 8) {
             document.getElementById('password').classList.add('is-invalid')
-        } else if (password !== con_password){
+        } else if (password !== con_password) {
             document.getElementById('con_password').classList.add('is-invalid')
-        } else if (picture === ''){
+        } else if (picture === '') {
             document.getElementById('picture').classList.add('is-invalid')
-        } else{
+        } else {
             const data = {
                 user_name: user_name,
                 email: email,
                 password: password,
-                picture : pictureFile
+                picture: pictureFile
             }
             forms.forEach(form => {
                 form.classList.remove('is-invalid')

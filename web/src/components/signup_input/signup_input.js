@@ -1,5 +1,5 @@
 
-function signup_input({id, placeholder, invalid ,type}) {
+function Signup_input({id, placeholder, invalid ,type}) {
     return (
         <div className="input-group mb-3">
             <input type={type} className="form-control needs-validation form-control-lg bg-light fs-6" id={id} placeholder={placeholder} ></input>
@@ -10,4 +10,4 @@ function signup_input({id, placeholder, invalid ,type}) {
 
     );
 }
-export default signup_input;
+export default Signup_input;

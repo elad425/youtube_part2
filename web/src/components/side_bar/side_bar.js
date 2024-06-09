@@ -12,37 +12,37 @@ import { ReactComponent as Sports } from './icons/sports.svg'
 import { ReactComponent as Podcasts } from './icons/podcasts.svg'
 
 import Sign_in_button from '../sign_in_button/sign_in_button';
-function side_bar() {
+function Side_bar() {
 
    return (
       <div className="side_bar">
          <div className="side_bar_container">
-            <lu class="list">
+            <lu className="list">
                <li>
-                  <button class="side_bar_button"><Home_icon /> Home</button>
+                  <button className="side_bar_button"><Home_icon /> Home</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Shorts_icon /> Shorts</button>
+                  <button className="side_bar_button"><Shorts_icon /> Shorts</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Subsctriptions_icon /> Subscriptions</button>
-               </li>
-            </lu>
-         </div>
-         <div className="side_bar_container">
-            <lu class="list">
-               <li>
-                  <button class="side_bar_button"><You_icon /> You</button>
-               </li>
-               <li>
-                  <button class="side_bar_button"><History_icon /> History</button>
+                  <button className="side_bar_button"><Subsctriptions_icon /> Subscriptions</button>
                </li>
             </lu>
          </div>
          <div className="side_bar_container">
-            <lu class="list">
+            <lu className="list">
                <li>
-                  <p class="sign_in_text">Sign in to like videos, comment, and subscribe.</p>
+                  <button className="side_bar_button"><You_icon /> You</button>
+               </li>
+               <li>
+                  <button className="side_bar_button"><History_icon /> History</button>
+               </li>
+            </lu>
+         </div>
+         <div className="side_bar_container">
+            <lu className="list">
+               <li>
+                  <p className="sign_in_text">Sign in to like videos, comment, and subscribe.</p>
                </li>
                <li>
                   <Sign_in_button />
@@ -50,27 +50,27 @@ function side_bar() {
             </lu>
          </div>
          <div className="side_bar_container">
-            <lu class="list">
+            <lu className="list">
                <li>
-                  <h3 class="sign_in_text">Explore</h3>
+                  <h3 className="sign_in_text">Explore</h3>
                </li>
                <li>
-                  <button class="side_bar_button"><Trending /> Trending</button>
+                  <button className="side_bar_button"><Trending /> Trending</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Music /> Music</button>
+                  <button className="side_bar_button"><Music /> Music</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Gaming /> Gaming</button>
+                  <button className="side_bar_button"><Gaming /> Gaming</button>
                </li>
                <li>
-                  <button class="side_bar_button"><News /> News</button>
+                  <button className="side_bar_button"><News /> News</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Sports /> Sports</button>
+                  <button className="side_bar_button"><Sports /> Sports</button>
                </li>
                <li>
-                  <button class="side_bar_button"><Podcasts /> Podcasts</button>
+                  <button className="side_bar_button"><Podcasts /> Podcasts</button>
                </li>
             </lu>
          </div>
@@ -80,4 +80,4 @@ function side_bar() {
 
 
 }
-export default side_bar;
+export default Side_bar;

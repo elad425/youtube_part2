@@ -23,12 +23,18 @@ body{
 .rounded{
     border-radius: 30px;
 }
+
+.submit-btn{
+
 .submit{
+
     background-color: #000;
     border-color: #000;
     
 }
-.submit:hover{
+
+.submit-btn:hover{
+
     background-color: #ad0f0f;
     border-color: #ad0f0f;
     

@@ -1,7 +1,7 @@
 import './login_screen.css';
 import { useNavigate, Link } from 'react-router-dom';
 
-function Login_screen({ usersList, setUser, user }) {
+function Login_screen({ usersList, setUser, user,setIsUserLoggedIn }) {
   const navigate = useNavigate();
 
   const Verify_user = () => {
@@ -19,6 +19,7 @@ function Login_screen({ usersList, setUser, user }) {
           document.getElementById('email').classList.add('is-valid')
           document.getElementById('password').classList.add('is-valid')
           setUser([user, List_user])
+          setIsUserLoggedIn(true)
           setTimeout(() => {
             navigate('/');
           },700);
@@ -53,7 +54,11 @@ function Login_screen({ usersList, setUser, user }) {
               </div>
             </div>
             <div className="input-group mb-2 pt-4">
+
+              <button className="btn btn-lg btn-primary w-100 submit-btn" onClick={Verify_user} type='submit'>Login</button>
+
               <button className="btn btn-lg btn-primary w-100 submit" onClick={Verify_user} type='submit'>Login</button>
+
             </div>
             <div className="row">
               <div className="col">

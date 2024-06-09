@@ -2,29 +2,32 @@ import './video_list.css';
 import Video from '../video_card/video_card';
 import Videos from '../../data/video_data.json'
 import { useState } from 'react';
-function App() {
-  const [videoList,setVideoList]=useState(Videos)
-//   const addArticle =()=>{
-//     const article ={
-//       "id":3,
-//       "title": "omggggggg",
-//       "author" :"obama",
-//       "category" :"donno",
-//       "publication_date":"2000000-01-01"
-//<button onClick={addArticle}>Add</button>
+function Video_list() {
+  const [videoList, setVideoList] = useState(Videos)
+  // const addVideo = (title,channel, description, thumbnail, video,channel_icon) => {
+  //   const new_video = {
+  //     "id": 11,
+  //     "title": {title},
+  //     "channel": {channel},
+  //     "views": 0,
+  //     "date": "today",
+  //     "thumbnail": {thumbnail},
+  //     "channel_icon": {channel_icon}
+  //   }
+  //   setVideoList([...videoList,new_video])
+  // }
 
-//     }
-  
   return (
-   <div className='videos-container-grid'>
-    {
-    videoList.map((video) =>
-      <Video {...video}/>
-    )
-    }
-  </div>
-    
+
+    <div className='videos-container-grid'>
+      {
+        videoList.map((video) =>
+          <Video {...video} />
+        )
+      }
+    </div>
+
   );
 }
 
-export default App;
+export default Video_list;

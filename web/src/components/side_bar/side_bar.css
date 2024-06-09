@@ -6,11 +6,12 @@
     align-items: flex-start;
     justify-content: space-between;
     background-color: burlywood; */
-    width: 18%;
+    width: max-content;
     height: 100%;
     overflow-y: auto;
     margin-top: 1.25rem; /* Changed from 20px to 1.25rem */
     background-color: rgba(0, 0, 0, 0.021);
+    padding: 0.5rem;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     width: 100%;
     height: 20%; /* Kept this as it seems appropriate */
     padding: 0.625rem; /* Changed from 10px to 0.625rem */
-    margin: 0.3125rem 0; /* Changed from 5px to 0.3125rem */
+    margin: 0.3125rem ; /* Changed from 5px to 0.3125rem */
     background-color: transparent;
     border: none;
     font-size: 1rem;
@@ -39,6 +40,16 @@ body {
 
 .side_bar_button:hover {
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Changed from 0 4px 8px to 0 0.25rem 0.5rem */
+}
+body.dark-mode-enabled .side_bar_button:hover {
+  
+    background-color: #222222;
+    
+}
+body.dark-mode-enabled .side_bar_container {
+  
+    border-bottom: 1px solid #f7f7f7bc;
+    
 }
 
 .list {
@@ -59,4 +70,7 @@ body {
 .sign_in_text {
     font-size: 1rem; /* Changed from 16px to 1rem */
     font-family: "Roboto", sans-serif;
+}
+.side_bar_container svg {
+    filter: invert(0%) sepia(4%) saturate(0%) hue-rotate(324deg) brightness(102%) contrast(105%);
 }

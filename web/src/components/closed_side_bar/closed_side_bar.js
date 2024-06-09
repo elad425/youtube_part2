@@ -4,13 +4,13 @@ import { ReactComponent as Shorts_icon } from './icons/shorts.svg'
 import { ReactComponent as Subscriptions_icon } from './icons/subscriptions.svg'
 import { ReactComponent as You_icon } from './icons/you.svg'
 import { ReactComponent as History_icon } from './icons/history.svg'
-function closed_side_bar() {
+function Closed_side_bar() {
 
     return (
         <div className="closed_side_bar">
 
             <div className="closed_side_bar_container">
-                <lu className="list">
+                <div className="list">
                     <li>
                         <a href='#' className="closed_btn" >
                             <Home_icon />
@@ -21,7 +21,7 @@ function closed_side_bar() {
                     <li>
                         <a href='#' className="closed_btn" >
                             <Shorts_icon />
-                            <span className="btn-text">Home</span>
+                            <span className="btn-text">Shorts</span>
                         </a>
                     </li>
                     <li>
@@ -42,11 +42,11 @@ function closed_side_bar() {
                             <span className="btn-text">History</span>
                         </a>
                     </li>
-                </lu>
+                </div>
             </div>
         </div>
     );
 
 
 }
-export default closed_side_bar;
+export default Closed_side_bar;

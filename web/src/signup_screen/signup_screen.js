@@ -1,13 +1,18 @@
 import './signup_screen.css';
 import Signup_input from '../components/signup_input/signup_input';
-import { useNavigate, Link } from 'react-router-dom';
 
-function Signup_screen({ usersList, setUserList, setUser, user}) {
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+function Signup_screen({ usersList, setUserList,setIsUserLoggedIn }) {
+    const [pictureFile,setPictureFile] = useState(null);
     const navigate = useNavigate();
+    const handleUpload = (e)=>{
+        setPictureFile(e.target.files[0])
+    }
+    const signup_user = () => {
 
-    const validate_user = () => {
-
-        const forms = document.querySelectorAll('.needs-validation')
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var con_password = document.getElementById("con_password").value;
@@ -42,7 +47,7 @@ function Signup_screen({ usersList, setUserList, setUser, user}) {
                 user_name: user_name,
                 email: email,
                 password: password,
-                picture : picture
+                picture : pictureFile
             }
             forms.forEach(form => {
                 form.classList.remove('is-invalid')
@@ -71,16 +76,18 @@ function Signup_screen({ usersList, setUserList, setUser, user}) {
                             <Signup_input id="user_name" placeholder="User name" invalid="please enter user name" type="text" />
                             <Signup_input id="email" placeholder="Email adress" invalid="invalid email adress or email already exists" type="text" />
                             <Signup_input id="password" placeholder="Password" invalid="password need to contain at least 8 characters with letters and numbers" type="password" />
-                            <Signup_input id="con_password" placeholder="Confirm password" invalid="password doesnt match" type="password" />
+                            <Signup_input id="con_password" placeholder="Password" invalid="password doesnt match" type="password" />
                             <div className="mb-1">
                                 <small className="">select profile picture</small>
-                                <input className="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture"></input>
+                                <input class="form-control needs-validation form-control-lg bg-light fs-6" type="file" id="picture" onChange={handleUpload}></input>
                                 <div className="invalid-feedback">
                                     missing picture
                                 </div>
                             </div>
                             <div className="input-group mt-4 mb-2">
-                                <button className="btn btn-lg btn-primary w-100 submit" onClick={validate_user} type='submit'>Sign up</button>
+
+                                <button className="btn btn-lg btn-primary w-100 sign-up-btn" onClick={signup_user} type='submit'>Sign up</button>
+
                             </div>
                             <div className="row">
                                 <div className="col">

@@ -17,21 +17,24 @@ body{
 .rounded-2{
     border-radius: 30px;
 }
-.costume{
-    width: 200px;
-}
 .login{
     background-color: #ad0f0f;
 }
 .rounded{
     border-radius: 30px;
 }
+
 .submit-btn{
+
+.submit{
+
     background-color: #000;
     border-color: #000;
     
 }
+
 .submit-btn:hover{
+
     background-color: #ad0f0f;
     border-color: #ad0f0f;
     

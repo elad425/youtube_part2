@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react';
 import Add_comment_box from '../add_comment_box/add_comment_box';
 import { ReactComponent as Dots_menu } from './dots-menu.svg';
 
-function Under_video_bar({ description, channel, views, date, channel_icon, addComment, user, editVideo, deleteVideo, title, userConnected }) {
-    console.log("desc is ",description);
+function Under_video_bar({ description, channel, views, date, channel_icon, addComment, user, editVideo, deleteVideo, title, userConnected,changeLikedBy,likedBy}) {
+    console.log("isconnected ",userConnected);
     let rightChannel = false;
     if (userConnected){
        
@@ -61,7 +61,7 @@ function Under_video_bar({ description, channel, views, date, channel_icon, addC
                     <span>{channel}</span>
                 </div>
 
-                <Like_dislike_buttons />
+                <Like_dislike_buttons likedBy={likedBy} changeLikedBy={changeLikedBy} isUserConnected={userConnected}/>
 
                 <Share_button />
             </div>

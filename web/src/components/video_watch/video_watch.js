@@ -12,7 +12,6 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
     const [videoWatched,setVideoWatched]= useState(video)
 
 
-
     useEffect(() => {
         const video1 = videoList.find(v => v.id === id);
         console.log(videoList)
@@ -30,7 +29,6 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
             const updatedCommentsChannel = [...videoDetails.comments_channel, commentChannel1];
             const updatedCommentsChannelIcon = [...videoDetails.comments_channel_icon, commentChannel_icon1];
             const updatedCommentsDate = [...videoDetails.comments_date, commentDate1];
-
             videoDetails.comments = updatedComments;
             videoDetails.comments_channel = updatedCommentsChannel;
             console.log("updatedblah",updatedCommentsChannel)
@@ -56,6 +54,11 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
             setEditedTitle(newTitle);
 
     };
+    const changeLikedBy =(num)=>{
+        if (videoDetails){
+            videoDetails.likedBy=num;
+        }
+    }
     const deleteVideo =()=>{
        
         const updatedVideoList = videoList.filter(video => video.id !== id);
@@ -113,7 +116,9 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
                         editVideo={editVideo}
                         deleteVideo={deleteVideo}
                         title={editedTitle}
-                        userConnected={userConnected}/>
+                        userConnected={userConnected}
+                        changeLikedBy={changeLikedBy}
+                        likedBy={videoDetails.likedBy}/>
                 </div>
                 <div className="comments-container">
                     {videoCommentsList.map((comment, index) => (

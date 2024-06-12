@@ -68,7 +68,7 @@ function Comment_box({ index, comment, channel, channel_icon, date, editComment,
                 ) : (
                     <p className="comment-content-p">{comment}</p>
                 )}
-                <Like_dislike_buttons />
+                <Like_dislike_buttons isUserConnected={userConnected}/>
                 {editMode && <button onClick={handleSave}>Save</button>}
             </div>
         </div>

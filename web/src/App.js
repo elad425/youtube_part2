@@ -21,6 +21,7 @@ function App() {
         videoList={videoList} setVideoList={setVideoList} searchVideoList={searchVideoList} setSearchVideoList={setSearchVideoList} />} />
         <Route path="signup" element={<Signup_screen usersList={usersList} setUserList={setUserList} />} />
         <Route path="login" element={<Login_screen usersList={usersList} setUser={setUser} user={user} setIsUserLoggedIn={setIsUserLoggedIn} />} />
+
       </Routes>
     </BrowserRouter>
   );

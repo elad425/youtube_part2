@@ -3,11 +3,12 @@
     overflow: auto;
     display: flex;
     width: 100%;
+    padding-left: 4em;
+    padding-right: 4em;
 }
 
 .video-desc-comments-container {
     width: 90%; /* Adjust the width to take 90% of the space */
-    margin-left: 4em;
     /* Ensure it grows to fill available space */
 }
 

@@ -94,7 +94,7 @@ function Signup_screen({ usersList, setUserList,setIsUserLoggedIn ,user,setUser}
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <small>already have an account? <Link to="/login">Log in</Link></small>
+                                    <small >already have an account? <Link to="/login" className='small-a'>Log in</Link></small>
                                 </div>
                             </div>
                         </div>

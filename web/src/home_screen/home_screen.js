@@ -102,7 +102,7 @@ function Home_screen({ user, isUserLoggedIn,setUser,setIsUserLoggedIn,videoList,
         {isModalOpen && <Upload_popup closeModal={toggleModal} addVideo={addVideo} />}
         {!isVideoWatched ? (
           <div className="body-container">
-            {isSidebarOpen ? <Side_bar /> : <Closed_side_bar />}
+            {isSidebarOpen ? <Side_bar isUserLoggedIn={isUserLoggedIn} /> : <Closed_side_bar />}
             <div className={isSidebarOpen ? 'video-page-container-reduced' : 'video-page-container-full'}>
               <Video_filter_buttons />
               <div className='videos-container-grid'>

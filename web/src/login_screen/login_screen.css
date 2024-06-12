@@ -37,3 +37,6 @@ body{
     border-color: #ad0f0f;
     
 }
+body.dark-mode-enabled .small-a{
+    color: #0000EE;
+}

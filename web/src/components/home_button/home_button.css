@@ -16,7 +16,12 @@
     height: 100%;
 }
 /* body.dark-mode-enabled .yt-image{
-    content: url("yt_logo_rgb_dark.png");
+    content: url("../../yt_logo_rgb_dark.png");
+    max-height: 50px;
+    max-width: 100px;
+}
+body:not(.dark-mode-enabled) .yt-image {
+    content: url("yt_logo_rgb_light.png");
     max-height: 50px;
     max-width: 100px;
 } */

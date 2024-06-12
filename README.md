@@ -4,7 +4,8 @@ To run our code:
 1. install node js
 2. clone the repository
 3. navigate to the "web" folder in the terminal
-4. use command npm start
+4. install npm with ths command "npm install"
+5. use command npm start
 
 workflow:
 we first divided the required pages between us, one did the sign up/login pages,  while the other did the home page/video upload/video watch pages (we switched the pages for the android part)

@@ -57,7 +57,6 @@ function Login_screen({ usersList, setUser, user,setIsUserLoggedIn }) {
 
               <button className="btn btn-lg btn-primary w-100 submit-btn" onClick={Verify_user} type='submit'>Login</button>
 
-              <button className="btn btn-lg btn-primary w-100 submit" onClick={Verify_user} type='submit'>Login</button>
 
             </div>
             <div className="row">

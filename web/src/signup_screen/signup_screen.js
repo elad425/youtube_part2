@@ -16,7 +16,6 @@ function Signup_screen({ usersList, setUserList,setIsUserLoggedIn ,user,setUser}
     const signup_user = () => {
         const forms = document.querySelectorAll('.needs-validation')
 
-        const forms = document.querySelectorAll('.needs-validation')
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var con_password = document.getElementById("con_password").value;

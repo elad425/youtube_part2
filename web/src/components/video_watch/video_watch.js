@@ -10,12 +10,11 @@ function Video_watch({ id, title, description, channel, views, date, thumbnail, 
     const [videoDesc,setVideoDesc] = useState(description)
     const [editedTitle, setEditedTitle] = useState(title);
     const [videoWatched,setVideoWatched]= useState(video)
-
+    console.log("wow2",userConnected)
 
     useEffect(() => {
         const video1 = videoList.find(v => v.id === id);
-        console.log(videoList)
-        console.log("video id is",id)
+
         setVideoDetails(video1);
         setVideoCommentsList(video1 ? video1.comments || [] : []);
         setVideoDesc(video1.description)

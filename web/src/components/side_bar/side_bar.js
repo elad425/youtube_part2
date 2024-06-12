@@ -12,40 +12,40 @@ import { ReactComponent as Sports } from './icons/sports.svg'
 import { ReactComponent as Podcasts } from './icons/podcasts.svg'
 
 import Sign_in_button from '../sign_in_button/sign_in_button';
-function Side_bar(isUserLoggedIn) {
-   console.log("isgfadga",isUserLoggedIn)
+function Side_bar({isUserLoggedIn}) {
+   console.log("wow",isUserLoggedIn)
    return (
       <div className="side_bar">
          <div className="side_bar_container">
             <lu className="list">
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Home_icon /> Home</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Shorts_icon /> Shorts</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Subsctriptions_icon /> Subscriptions</button>
                </li>
             </lu>
          </div>
          <div className="side_bar_container">
             <lu className="list">
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><You_icon /> You</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><History_icon /> History</button>
                </li>
             </lu>
          </div>
-        {isUserLoggedIn && (
+        {!isUserLoggedIn && (
             <div className="side_bar_container">
                <lu className="list">
-                  <li>
+                  <li className='side-bar-list-item'>
                      <p className="sign_in_text">Sign in to like videos, comment, and subscribe.</p>
-                  </li>
-                  <li>
+                  </li >
+                  <li className='side-bar-list-item'>
                      <Sign_in_button />
                   </li>
                </lu>
@@ -53,25 +53,25 @@ function Side_bar(isUserLoggedIn) {
          )}
          <div className="side_bar_container">
             <lu className="list">
-               <li>
+               <li className='side-bar-list-item'>
                   <h3 className="sign_in_text">Explore</h3>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Trending /> Trending</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Music /> Music</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Gaming /> Gaming</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><News /> News</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Sports /> Sports</button>
                </li>
-               <li>
+               <li className='side-bar-list-item'>
                   <button className="side_bar_button"><Podcasts /> Podcasts</button>
                </li>
             </lu>

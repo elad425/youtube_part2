@@ -36,9 +36,13 @@ function Home_screen({ user, isUserLoggedIn,setUser,setIsUserLoggedIn,videoList,
   };
 
   const doSearch = (q) => {
- 
-    setVideoList(searchVideoList.filter((video) => video.title.includes(q)));
-  };
+    const lowerCaseQuery = q.toLowerCase();
+    setVideoList(
+        searchVideoList.filter((video) =>
+            video.title.toLowerCase().includes(lowerCaseQuery)
+        )
+    );
+};
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);

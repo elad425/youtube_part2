@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function Sign_in_button() {
 return (
     <div className ="button_div">
-      <Link to="/signup"><button className="sign_in_button"><Person_circle />sign in</button></Link>
+      <Link to="/login"><button className="sign_in_button"><Person_circle />sign in</button></Link>
     </div>
      
     );

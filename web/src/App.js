@@ -19,7 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home_screen user={user} isUserLoggedIn={isUserLoggedIn} setUser={setUser} setIsUserLoggedIn={setIsUserLoggedIn}
         videoList={videoList} setVideoList={setVideoList} searchVideoList={searchVideoList} setSearchVideoList={setSearchVideoList} />} />
-        <Route path="signup" element={<Signup_screen usersList={usersList} setUserList={setUserList} setUser={setUser} user={user}/>} />
+
+        <Route path="signup" element={<Signup_screen usersList={usersList} setUserList={setUserList} user={user} setUser={setUser} />} />
+
         <Route path="login" element={<Login_screen usersList={usersList} setUser={setUser} user={user} setIsUserLoggedIn={setIsUserLoggedIn} />} />
 
       </Routes>

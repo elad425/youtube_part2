@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function Signup_screen({ usersList, setUserList, setIsUserLoggedIn ,setUser,user}) {
-    const [pictureFile, setPictureFile] = useState(null);
+
+function Signup_screen({ usersList, setUserList,setIsUserLoggedIn ,user,setUser}) {
+    const [pictureFile,setPictureFile] = useState(null);
+
     const navigate = useNavigate();
     const handleUpload = (e) => {
         setPictureFile(e.target.files[0])
@@ -14,6 +16,7 @@ function Signup_screen({ usersList, setUserList, setIsUserLoggedIn ,setUser,user
     const signup_user = () => {
         const forms = document.querySelectorAll('.needs-validation')
 
+        const forms = document.querySelectorAll('.needs-validation')
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var con_password = document.getElementById("con_password").value;
@@ -57,7 +60,7 @@ function Signup_screen({ usersList, setUserList, setIsUserLoggedIn ,setUser,user
             setUserList([...usersList, data])
             setUser([user, data])
             setTimeout(() => {
-                navigate('/');
+                navigate('/login');
             }, 700);
         }
 

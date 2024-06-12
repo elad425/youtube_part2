@@ -6,7 +6,7 @@ import Add_comment_box from '../add_comment_box/add_comment_box';
 import { ReactComponent as Dots_menu } from './dots-menu.svg';
 
 function Under_video_bar({ description, channel, views, date, channel_icon, addComment, user, editVideo, deleteVideo, title, userConnected }) {
-  
+    console.log("desc is ",description);
     let rightChannel = false;
     if (userConnected){
        

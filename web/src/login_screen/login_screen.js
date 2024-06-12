@@ -61,7 +61,7 @@ function Login_screen({ usersList, setUser, user,setIsUserLoggedIn }) {
             </div>
             <div className="row">
               <div className="col">
-                <small>Don't have an account? <Link to="/signup">Sign up</Link></small>
+                <small >Don't have an account? <Link to="/signup" className='small-a'>Sign up</Link></small>
               </div>
             </div>
           </div>

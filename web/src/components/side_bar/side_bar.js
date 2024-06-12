@@ -12,8 +12,8 @@ import { ReactComponent as Sports } from './icons/sports.svg'
 import { ReactComponent as Podcasts } from './icons/podcasts.svg'
 
 import Sign_in_button from '../sign_in_button/sign_in_button';
-function Side_bar() {
-
+function Side_bar(isUserLoggedIn) {
+   console.log("isgfadga",isUserLoggedIn)
    return (
       <div className="side_bar">
          <div className="side_bar_container">
@@ -39,16 +39,18 @@ function Side_bar() {
                </li>
             </lu>
          </div>
-         <div className="side_bar_container">
-            <lu className="list">
-               <li>
-                  <p className="sign_in_text">Sign in to like videos, comment, and subscribe.</p>
-               </li>
-               <li>
-                  <Sign_in_button />
-               </li>
-            </lu>
-         </div>
+        {isUserLoggedIn && (
+            <div className="side_bar_container">
+               <lu className="list">
+                  <li>
+                     <p className="sign_in_text">Sign in to like videos, comment, and subscribe.</p>
+                  </li>
+                  <li>
+                     <Sign_in_button />
+                  </li>
+               </lu>
+            </div>
+         )}
          <div className="side_bar_container">
             <lu className="list">
                <li>
